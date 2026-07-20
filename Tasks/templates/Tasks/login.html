@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login FOrm</title>
+    <link rel="stylesheet" href="{% static 'css/form_style.css' %}">
+</head>
+<body>
+    
+    <div class="lcontainer">
+        
+        <div class="login">
+            <a href="{% url 'register' %}" class="hlink">SignUp</a>
+        </div>
+        
+        {% if messages %}
+            {% for message in messages %}
+                <div class="success-message">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    
+        <form method="POST">
+            {% csrf_token %}
+
+            <h1>Login</h1>
+            
+            {{ form.username }}
+             {{ form.username.errors }}
+            <br><br>
+
+            {{ form.password }}
+            {{ form.password.errors }}
+            <br><br>
+
+            {{ form.non_field_errors }}
+
+            <button class="buton">Login</button>
+            
+        </form>
+
+        
+
+        
+        
+    </div>
+
+    
+</body>
+</html>

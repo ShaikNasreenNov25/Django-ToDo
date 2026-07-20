@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="{% static 'css/form_style.css' %}">
+</head>
+<body>
+        
+    <!--
+    <form method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+        {{ field.label }}
+        {{field}}
+    {% endfor %}
+    {{ form.username.label }}
+    {{ form.username }}
+
+    {{ form.email.label }}
+    {{ form.email }}
+
+    {{ form.password1.label }}
+    {{ form.password1 }}
+
+    {{ form.password2.label }}
+    {{ form.password2 }}
+
+    <input type="submit" name="create User">
+    -->
+
+    <div class="container">
+
+        <div class="login">
+            <p>Already have an acoount?
+            <a href="{% url 'loginpage' %}" class="hlink">Login</a>
+            </p>
+        </div>
+        
+        
+        <form method="POST">
+            {% csrf_token %}
+
+            <h1>Sign Up</h1>
+
+            {{ form.username }}
+            <br><br>
+
+            {{ form.email }}
+            <br><br>
+
+            {{ form.password1 }}
+            {{ form.password1.errors }}
+            <br><br>
+
+            {{ form.password2 }}
+            {{ form.password2.errors }}
+            <br><br>
+
+            
+            <button type="submit">Sign Up</button>
+        </form>
+        
+        
+    </div>
+
+
+
+
+
+
+
+
+
+    
+    
+</body>
+</html>
