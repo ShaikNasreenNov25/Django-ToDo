@@ -28,3 +28,9 @@ This project helps understand Django fundamentals like authentication, authoriza
 - Bootstrap
 
 ## 📂 Project Structure
+
+## Author 
+
+**Your Name** : Shaik Nasreen
+
+**Git Hub** : https://github.com/ShaikNasreenNov25/Django-ToDo/
